@@ -1,4 +1,5 @@
 <object-types>
-	<includeconfig file="objecttypes/locations.xml" />
-	<includeconfig file="objecttypes/network-devices.xml" />
+	<includeconfig file="objecttypes/assets.xml" />
+	<includeconfig file="objecttypes/conf.xml" />
+	<includeconfig file="objecttypes/soft.xml" />
 </object-types>

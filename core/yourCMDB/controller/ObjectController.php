@@ -734,4 +734,5 @@ class ObjectController
 		return $objects;
 	}
 }
+
 ?>

@@ -80,15 +80,21 @@ class ObjectTypeConfig
 					$fieldLabel = (string)$field['label'];
 					$fieldDefaultValue = (string)$field['default'];
 					$fieldIsSummary = false;
+					$fieldIsUniq = false; //字段唯一
 					if(isset($field['summaryfield']) && $field['summaryfield'] == "true")
 					{
 						$fieldIsSummary = true;
+					}
+					if(isset($field['uniq']) && $field['uniq'] == "true")
+					{
+						$fieldIsUniq = true;
 					}
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['name'] = $fieldName;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['type'] = $fieldType;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['label'] = $fieldLabel;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['default'] = $fieldDefaultValue;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['summary'] = $fieldIsSummary;
+					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['uniq'] = $fieldIsUniq;
 				}
 			}
 
@@ -206,6 +212,28 @@ class ObjectTypeConfig
 		return $output;
 	}
 
+	/**
+	* Returns an array with all uniq fields of a specific object type
+	* @param $objectType	object type for getting the uniq fields
+	* @returns 		array with fieldname->datatype
+	*/
+	public function getUniqFields($objectType)
+	{
+		$output = Array();
+		foreach($this->objectFields[$objectType] as $group)
+		{
+			foreach($group as $field)
+			{
+				if($field['uniq'])
+				{	
+					$fieldname = $field['name'];
+					$fieldtype = $field['type'];
+					$output[$fieldname] = $fieldtype;
+				}
+			}
+		}
+		return $output;
+	}
 
 	/**
 	* Returns an array with all field groups of a specific object type
