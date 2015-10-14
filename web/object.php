@@ -61,45 +61,6 @@
 		$paramSortType = "DESC";
 	}
 
-	/**
-	 * check unique field(uniq field must be unique and not null)
-	 * @param string $type  object type
-	 * @param mixed[] $fields  array with  all fields of a object
-	 */
-	function checkUniqField($type, $fields)
-	{
-		global $config, $objectController;
-		//check unique field
-		$uniq = $config->getObjectTypeConfig()->getUniqFields($type);
-		$notUniq = false;
-		$emptyFiled = false;
-		foreach($uniq as $key => $value)
-		{   
-			if($fields[$key]=="")
-			{
-				$emptyFiled = true;
-				break;
-			}
-			$object = $objectController->getObjectsByField($key, $fields[$key], $type, null, 0, 0, '');
-			//print_r(json_encode($object));
-			if(!empty($object))
-			{   
-				$notUniq = true;
-				break;
-			}   
-		}   
-
-		//die(json_encode($notUniq));
-		if($notUniq || $emptyFiled)
-		{   
-			$paramMessage = gettext("$key must be unique and not null");
-			include "error/Error.php";
-			break;
-		}
-	}
-
-
-
 	switch($paramAction)
 	{
 		case "list":
@@ -152,7 +113,13 @@
 			{
                         	$objectFields[$field] = getHttpPostVar($field, "");
 			}
-			checkUniqField($paramType, $objectFields);
+			$key = checkUniqFields($paramType, $objectFields);
+			if($key)
+			{
+				$paramMessage = gettext("$key must be unique and not null");
+				include "error/Error.php";
+				break;
+			}
 
 			//create new object and return assetId
 			try
@@ -181,7 +148,13 @@
                         	$objectFields[$field] = getHttpPostVar($field, "");
 			}
 
-			checkUniqField($paramType, $objectFields);
+			$key = checkUniqFields($paramType, $objectFields, $paramId);
+			if($key) 
+			{
+				$paramMessage = gettext("$key must be unique and not null");
+				include "error/Error.php";
+				break;
+			}
 
 			//change object and return the ShowObject page
 			try

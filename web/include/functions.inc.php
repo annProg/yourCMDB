@@ -79,4 +79,72 @@ function printErrorMessage($message)
 	echo "</div>";
 }
 
+/**
+ * check unique field(uniq field must be unique and not null)
+ * @param string $type  object type
+ * @param mixed[] $fields  array with  all fields of a object
+ */
+function checkUniqFields($type, $fields, $objectId=0)
+{
+	global $config, $objectController;
+	//check unique field
+	$uniq = $config->getObjectTypeConfig()->getUniqFields($type);
+	$notUniq = false;
+	$emptyFiled = false;
+	foreach($uniq as $key => $value)
+	{   
+		if($fields[$key]=="")
+		{
+			$emptyFiled = true;
+			break;
+		}
+		$objects = $objectController->getObjectsByField($key, $fields[$key], $type, null, 0, 0, '');
+		foreach($objects as $k => $v)
+		{
+			//print_r(gettype($v));
+			$id = $v -> getID();
+			if($id == $objectId)
+				unset($objects[$k]);
+		}
+		//die(print_r(json_encode($objects)));
+		if(!empty($objects))
+		{   
+			$notUniq = true;
+			break;
+		}   
+	}   
+
+	//die(json_encode($notUniq));
+	if($notUniq || $emptyFiled)
+	{   
+		return $key;
+	}
+	return false;
+}
+
+
+function checkRestUniqFields($requestData)
+{
+	$requestDataArray = json_decode($requestData, true);
+	$objectType = $requestDataArray['objectType'];
+	$objectFields = array();
+	if(array_key_exists("objectId", $requestDataArray))
+		$id = $requestDataArray['objectId'];
+	else
+		$id = 0;
+	$fieldsAry = $requestDataArray['objectFields'];
+	foreach($fieldsAry as $groupname => $groupvalue)
+	{
+		if(gettype($groupname) != "string")
+			die("post data error");
+		foreach($fieldsAry[$groupname] as $fieldkey => $fieldvalue)
+		{
+			$objectFields[$fieldvalue["name"]] = $fieldvalue["value"];
+		}
+	}	
+
+	$key = checkUniqFields($objectType, $objectFields, $id);
+	return $key;
+}
+
 ?>

@@ -74,6 +74,12 @@
 	switch($requestPath[0])
 	{
 		case "objects":
+			if($requestMethod == "POST" || $requestMethod == "PUT")
+			{
+				$key = checkRestUniqFields($requestData);
+				if($key)
+					die("$key must be uniq and not null");
+			}
 			$restResource = new RestResourceObject($requestPath, $authUser);
 			break;
 
