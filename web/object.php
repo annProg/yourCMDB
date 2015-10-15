@@ -35,7 +35,7 @@
 	use yourCMDB\exceptions\CmdbObjectNotFoundException;
 	use yourCMDB\exceptions\CmdbObjectLinkNotAllowedException;
 	use yourCMDB\exceptions\CmdbObjectLinkNotFoundException;
-	use \Exception;
+	//use \Exception;
 
 	//get UI Helper
 	include "object/ObjectUiHelper.php";

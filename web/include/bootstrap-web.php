@@ -61,6 +61,7 @@ $authUser = "";
 
 //get configuration
 $installTitle = $config->getViewConfig()->getInstallTitle();
+$baseUrl = $config->getViewConfig()->getBaseUrl();
 
 //setup i18n with gettext
 $i18nLocale = $config->getViewConfig()->getLocale();
