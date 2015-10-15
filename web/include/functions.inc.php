@@ -99,14 +99,20 @@ function checkUniqFields($type, $fields, $objectId=0)
 			break;
 		}
 		$objects = $objectController->getObjectsByField($key, $fields[$key], $type, null, 0, 0, '');
+
+		$retId = 0;
 		foreach($objects as $k => $v)
 		{
 			//print_r(gettype($v));
+			//don't compare with itself when update an object
 			$id = $v -> getID();
 			if($id == $objectId)
 				unset($objects[$k]);
+			else
+				$retId = $id;
 		}
-		//die(print_r(json_encode($objects)));
+		
+		//print_r((json_encode($objects)));
 		if(!empty($objects))
 		{   
 			$notUniq = true;
@@ -114,10 +120,11 @@ function checkUniqFields($type, $fields, $objectId=0)
 		}   
 	}   
 
+	$ret = array($key, $retId);
 	//die(json_encode($notUniq));
 	if($notUniq || $emptyFiled)
 	{   
-		return $key;
+		return $ret;
 	}
 	return false;
 }
@@ -145,6 +152,16 @@ function checkRestUniqFields($requestData)
 
 	$key = checkUniqFields($objectType, $objectFields, $id);
 	return $key;
+}
+
+function errorMessage($key)
+{
+	$err = array();
+	$err['errno'] = "10001";
+	$err['errmsg'] = "Conflict! some fields must be uniq and not null";
+	$err['detail'] = json_encode($key);
+	$err = json_encode($err);
+	return $err;
 }
 
 ?>

@@ -78,7 +78,12 @@
 			{
 				$key = checkRestUniqFields($requestData);
 				if($key)
-					die("$key must be uniq and not null");
+				{
+					$response = new RestResponse(409, $key);
+					$response->sendResponse();
+					$ret = errorMessage($key);
+					die($ret);
+				}
 			}
 			$restResource = new RestResourceObject($requestPath, $authUser);
 			break;

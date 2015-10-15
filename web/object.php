@@ -116,7 +116,7 @@
 			$key = checkUniqFields($paramType, $objectFields);
 			if($key)
 			{
-				$paramMessage = gettext("$key must be unique and not null");
+				$paramMessage = gettext(json_encode($key) . " must be unique and not null");
 				include "error/Error.php";
 				break;
 			}
@@ -151,7 +151,7 @@
 			$key = checkUniqFields($paramType, $objectFields, $paramId);
 			if($key) 
 			{
-				$paramMessage = gettext("$key must be unique and not null");
+				$paramMessage = gettext(json_encode($key) . " must be unique and not null");
 				include "error/Error.php";
 				break;
 			}

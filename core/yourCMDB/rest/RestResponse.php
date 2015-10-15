@@ -77,6 +77,10 @@ class RestResponse
 				$this->sendHttp405();
 				break;
 
+			case 409:
+				$this->sendHttp409();
+				break;
+
 			default:
 				$this->sendHttp500();
 				break;
@@ -137,6 +141,12 @@ class RestResponse
 		{
 			header("Allow: GET");
 		}
+	}
+
+	private function sendHttp409()
+	{
+		header("HTTP/1.1 409 Conflict");
+		header("Conflict:" . json_encode($this->data));
 	}
 
 	private function sendHttp500()
