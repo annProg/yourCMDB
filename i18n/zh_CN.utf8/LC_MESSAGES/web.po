@@ -2,7 +2,8 @@
 # Copyright (C) 2014 Michael Batz
 # This file is distributed under the same license as the yourCMDB package.
 # Michael Batz <michael@yourCMDB.org>, 2014.
-# Chinese Translation: hean@letv.com
+# Chinese Translation: me@annhe.net
+
 msgid ""
 msgstr ""
 "Project-Id-Version: yourCMDB\n"
