@@ -61,6 +61,7 @@
 		$paramSortType = "DESC";
 	}
 
+
 	switch($paramAction)
 	{
 		case "list":

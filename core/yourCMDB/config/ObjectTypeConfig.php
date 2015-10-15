@@ -80,7 +80,7 @@ class ObjectTypeConfig
 					$fieldLabel = (string)$field['label'];
 					$fieldDefaultValue = (string)$field['default'];
 					$fieldIsSummary = false;
-					$fieldIsUniq = false; //字段唯一
+					$fieldIsUniq = false; //uniq field. should be uniq and not null
 					if(isset($field['summaryfield']) && $field['summaryfield'] == "true")
 					{
 						$fieldIsSummary = true;

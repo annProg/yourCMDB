@@ -82,7 +82,8 @@ function printErrorMessage($message)
 /**
  * check unique field(uniq field must be unique and not null)
  * @param string $type  object type
- * @param mixed[] $fields  array with  all fields of a object
+ * @param mixed[] $fields  array with  all fields of a specific object
+ * @returns array of uniq fieldkey and objectId of conflict object
  */
 function checkUniqFields($type, $fields, $objectId=0)
 {
@@ -130,6 +131,11 @@ function checkUniqFields($type, $fields, $objectId=0)
 }
 
 
+/**
+ * check unique field(uniq field must be unique and not null)
+ * @param string $type  object type
+ * @returns array of uniq fieldkey and objectId of conflict object
+ */
 function checkRestUniqFields($requestData)
 {
 	$requestDataArray = json_decode($requestData, true);
@@ -154,6 +160,11 @@ function checkRestUniqFields($requestData)
 	return $key;
 }
 
+/**
+ * print error message
+ * @param array $key  array of conflict key and objectId
+ * @returns  json string  json string error message
+ */
 function errorMessage($key)
 {
 	$err = array();
