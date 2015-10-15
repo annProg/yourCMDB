@@ -1,0 +1,776 @@
+# yourCMDB WebUI Simple Chinese translation.
+# Copyright (C) 2014 Michael Batz
+# This file is distributed under the same license as the yourCMDB package.
+# Michael Batz <michael@yourCMDB.org>, 2014.
+# Chinese Translation: hean@letv.com
+msgid ""
+msgstr ""
+"Project-Id-Version: yourCMDB\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-27 10:52+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Michael Batz <michael@yourcmdb.org>\n"
+"Language-Team: Michael Batz <michael@yourcmdb.org>\n"
+"Language: zh_CN.utf8\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: China\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: gettext\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /home/wwwroot/default/yourcmdb/web\n"
+
+#: /var/www/yourCMDB/web/object.php:80
+#, php-format
+msgid "No object with AssetID %s found..."
+msgstr "未找到资产ID为 %s 的对象"
+
+#: /var/www/yourCMDB/web/object.php:104
+#: /var/www/yourCMDB/web/object.php:150
+msgid "No data were set when saving an object."
+msgstr "未设置对象"
+
+#: /var/www/yourCMDB/web/object.php:125
+msgid "Error saving new object"
+msgstr "保存新对象出错"
+
+#: /var/www/yourCMDB/web/object.php:130
+msgid "New Object successfully created"
+msgstr "创建对象成功"
+
+#: /var/www/yourCMDB/web/object.php:158
+msgid "Error saving object"
+msgstr "保存对象出错"
+
+#: /var/www/yourCMDB/web/object.php:163
+msgid "Object successfully changed"
+msgstr "更新对象成功"
+
+#: /var/www/yourCMDB/web/object.php:176
+msgid "Error deleting object: Object not found"
+msgstr "删除对象出错: 对象未找到"
+
+#: /var/www/yourCMDB/web/object.php:181
+msgid "Object deleted"
+msgstr "对象已删除"
+
+#: /var/www/yourCMDB/web/object.php:193
+msgid "Object for adding links not found."
+msgstr "要连接的对象不存在"
+
+#: /var/www/yourCMDB/web/object.php:203
+msgid "Object link successfully added"
+msgstr "成功连接对象"
+
+#: /var/www/yourCMDB/web/object.php:207
+msgid "Error adding object link: Object B not found"
+msgstr "新增对象连接错误: 对象 B 未找到"
+
+#: /var/www/yourCMDB/web/object.php:211
+#, php-format
+msgid "Link object %s with object %s is not allowed."
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:214
+msgid " The object link already exists."
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:228
+msgid "Object link was successfully deleted"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:232
+msgid "Error deleting object link: object not found"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:238
+msgid "Error deleting object link: Link not found"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:250
+#, php-format
+msgid "Event %s was successfully sent"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object.php:254
+msgid "Error sending event: object not found"
+msgstr ""
+
+#: /var/www/yourCMDB/web/index.php:37
+#: /var/www/yourCMDB/web/login.php:43
+msgid "Welcome to yourCMDB!"
+msgstr "欢迎来到yourCMDB"
+
+#: /var/www/yourCMDB/web/login.php:50
+msgid "Sorry, wrong username or password. Please try again..."
+msgstr ""
+
+#: /var/www/yourCMDB/web/login.php:52
+msgid "yourCMDB logo"
+msgstr ""
+
+#: /var/www/yourCMDB/web/login.php:58
+msgid "user"
+msgstr ""
+
+#: /var/www/yourCMDB/web/login.php:66
+msgid "password"
+msgstr ""
+
+#: /var/www/yourCMDB/web/login.php:72
+msgid "Go!"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin.php:36
+msgid "Admin"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin.php:44
+msgid "About"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin.php:58
+msgid "Authentication"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin.php:72
+msgid "Authorisation"
+msgstr ""
+
+#: /var/www/yourCMDB/web/unauthorised.php:30
+msgid "Unauthorised!"
+msgstr ""
+
+#: /var/www/yourCMDB/web/unauthorised.php:31
+msgid "You don't have the permission to access this page. Sorry."
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings.php:30
+msgid "User settings"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings.php:38
+msgid "user details"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:79
+msgid "Show also inactive objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:84
+msgid "Show only active objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:99
+msgid "Are you sure...?"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:104
+msgid "Do you really want to delete this object?"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:109
+#: /var/www/yourCMDB/web/object/ListObjects.php:182
+msgid "delete"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:110
+msgid "cancel"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:119
+msgid "switch"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:120
+msgid "add"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:120
+msgid "add new object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:121
+msgid "export"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:147
+msgid "AssetID"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:161
+msgid "active object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:164
+msgid "inactive object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:179
+msgid "show"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:180
+msgid "edit"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:196
+#: /var/www/yourCMDB/web/object/ListObjects.php:202
+msgid "previous"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ListObjects.php:236
+#: /var/www/yourCMDB/web/object/ListObjects.php:242
+msgid "next"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/EditObject.php:45
+#, php-format
+msgid "Edit Object %s:%s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/EditObject.php:49
+#, php-format
+msgid "Add %s Object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/EditObject.php:72
+msgid "Object Status"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/EditObject.php:108
+msgid "Go"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:74
+#, php-format
+msgid ""
+"\tThere are %s objects that reference to this object. \n"
+"\t\t\t\t\tIf you delete this object, all references will be set to null."
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:92
+msgid "object list"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:94
+msgid "duplicate"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:112
+msgid "QR-Code for object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:118
+msgid "Summary"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:143
+msgid "External Links"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:180
+msgid "Custom Events"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:209
+msgid "Comment"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:223
+msgid "Fields"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:224
+msgid "Referenced by"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:225
+msgid "Links"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:226
+msgid "Log"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:260
+#: /var/www/yourCMDB/web/object/ShowObject.php:285
+msgid "Type"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:261
+#: /var/www/yourCMDB/web/object/ShowObject.php:286
+#: /var/www/yourCMDB/web/object/ShowObject.php:326
+msgid "Action"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:273
+msgid "show object with reference"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:303
+msgid "show linked object"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:304
+msgid "delete link"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:312
+msgid "Add new link to object with ID:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:325
+msgid "Date"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:327
+msgid "Description"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ShowObject.php:328
+msgid "User"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/ObjectUiHelper.php:112
+msgid "generate"
+msgstr ""
+
+#: /var/www/yourCMDB/web/object/NewObject.php:39
+#: /var/www/yourCMDB/web/object/NewObject.php:46
+msgid "New Object"
+msgstr "新建对象"
+
+#: /var/www/yourCMDB/web/object/NewObject.php:48
+#: /var/www/yourCMDB/web/import/Form.php:87
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:170
+msgid "Object Type:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:50
+msgid "Password changeing is not allowed."
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:57
+msgid "Password not changed. Your old password was not correct."
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:66
+msgid "Password successfully changed."
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:71
+msgid "Password not changed. Your new passwords did not match. Please try again..."
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:83
+#, php-format
+msgid "User: %s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:87
+msgid "username"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:88
+msgid "access group"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:92
+msgid "change password"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:103
+msgid "Change password"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:110
+msgid "old password:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:111
+msgid "new password:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/settings/UserDetails.php:112
+msgid "retype new password:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:69
+msgid "Found Object by ID"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:96
+#: /var/www/yourCMDB/web/search/SearchResult.php:207
+msgid "Summary: "
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:117
+#, php-format
+msgid "Search Results (%s)"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:175
+msgid "Type: "
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:178
+msgid "add positive filter"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:179
+msgid "add negative filter"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:184
+msgid "Matches: "
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchResult.php:288
+msgid "No objects found for searchstring "
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:33
+msgid "Search"
+msgstr "搜索"
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:42
+msgid "Advanced Search Options"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:51
+msgid "search for text"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:58
+msgid "only active objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:73
+msgid "search filter"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:82
+#: /var/www/yourCMDB/web/search/SearchForm.php:94
+msgid "remove filter"
+msgstr ""
+
+#: /var/www/yourCMDB/web/search/SearchForm.php:108
+msgid "Clear Search"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/ImportWorker.php:42
+#: /var/www/yourCMDB/web/import/Import.php:75
+msgid "Error importing objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:46
+msgid "Import and Export"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:54
+msgid "Import Objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:57
+msgid "Import Format:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:69
+msgid "Import File:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:84
+msgid "Export Objects"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Form.php:103
+msgid "Output Format:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Preview.php:60
+msgid "Could not read from uploaded file. Please check permissions."
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/Import.php:46
+msgid "Importing objects..."
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:35
+msgid "CSV Import - Preview"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:83
+msgid "first lines of csv file"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:101
+msgid "Object Fields"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:117
+msgid "foreign key for field: "
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:149
+msgid "further options"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:151
+msgid "Start in line:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:188
+msgid "CSV delimiter"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:196
+msgid "CSV enclosure"
+msgstr ""
+
+#: /var/www/yourCMDB/web/import/formats/PreviewCsv.php:204
+msgid "Import Batch Size"
+msgstr ""
+
+#: /var/www/yourCMDB/web/dashboard/DashletLastChangedObjects.php:30
+msgid "last changed objects"
+msgstr "最近修改对象"
+
+#: /var/www/yourCMDB/web/dashboard/DashletLastChangedObjects.php:34
+#: /var/www/yourCMDB/web/dashboard/DashletNewestObjects.php:34
+msgid "type"
+msgstr "类型"
+
+#: /var/www/yourCMDB/web/dashboard/DashletLastChangedObjects.php:35
+msgid "date changed"
+msgstr "修改日期"
+
+#: /var/www/yourCMDB/web/dashboard/DashletLastChangedObjects.php:37
+#: /var/www/yourCMDB/web/dashboard/DashletNewestObjects.php:37
+msgid "action"
+msgstr "动作"
+
+#: /var/www/yourCMDB/web/dashboard/DashletNewestObjects.php:30
+msgid "last created objects"
+msgstr "最近新增对象"
+
+#: /var/www/yourCMDB/web/dashboard/DashletNewestObjects.php:35
+msgid "date created"
+msgstr "创建日期"
+
+#: /var/www/yourCMDB/web/export/ExportCsv.php:67
+msgid "Active"
+msgstr ""
+
+#: /var/www/yourCMDB/web/error/Error.php:32
+msgid "yourCMDB Error"
+msgstr ""
+
+#: /var/www/yourCMDB/web/error/Error.php:36
+msgid "The error above should not be happened. Maybe you use a wrong URL or you found a bug."
+msgstr ""
+
+#: /var/www/yourCMDB/web/error/Error.php:38
+#, php-format
+msgid "Please check your setup or ask for help on the %s yourCMDB Website %s."
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:58
+#, php-format
+msgid "Rights for group %s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:91
+msgid "Add new access group with name:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:100
+msgid "add access right"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:135
+msgid "Error: empty group name is not allowed"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:152
+#, php-format
+msgid "access group %s successfully updated"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:168
+#, php-format
+msgid "Error setting access rights for group %s. Because of dupplicate entries"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:173
+#, php-format
+msgid "Error setting access rights for access group %s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:178
+#, php-format
+msgid "Error updating access rights for access group %s. Because of dupplicate entries"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:187
+#, php-format
+msgid "access group %s successfully deleted"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:191
+#, php-format
+msgid "Error deleting access group %s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:204
+msgid "add new access group"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:209
+msgid "access rights management"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/Authorisation.php:243
+msgid "edit access group"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:56
+#, php-format
+msgid "user %s successfully created"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:60
+#, php-format
+msgid "Error creating user  %s"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:65
+#, php-format
+msgid "Error creating user  %s. Empty username or password"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:69
+#, php-format
+msgid "Error creating user  %s. User already exists"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:80
+#, php-format
+msgid "user %s successfully deleted"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:84
+#, php-format
+msgid "Error deleting user %s. User not found."
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:102
+msgid "Password successfully changed. "
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:111
+msgid "Accessgroup successfully changed. "
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:116
+#, php-format
+msgid "User %s successfully changed. "
+msgstr "用户 %s 更新成功"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:121
+#, php-format
+msgid "Error editing user %s. User not found."
+msgstr "编辑用户 %s 出错. 用户不存在"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:133
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:181
+msgid "add new user"
+msgstr "新增用户"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:138
+msgid "local user management"
+msgstr "本地用户管理"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:188
+msgid "username:"
+msgstr "用户名:"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:189
+msgid "password:"
+msgstr "密码:"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:190
+msgid "access group:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:211
+msgid "edit user"
+msgstr "编辑用户"
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:216
+msgid "Leave fields empty, that you do not wish to change."
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/LocalUsers.php:220
+msgid "new access group:"
+msgstr "新增用户组"
+
+#: /var/www/yourCMDB/web/admin/About.php:51
+msgid "yourCMDB is published under GPLv3."
+msgstr "yourCMDB基于GPLv3."
+
+#: /var/www/yourCMDB/web/admin/About.php:60
+msgid "version information"
+msgstr "版本信息"
+
+#: /var/www/yourCMDB/web/admin/About.php:61
+msgid "yourCMDB:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/About.php:62
+msgid "operating system:"
+msgstr "操作系统: "
+
+#: /var/www/yourCMDB/web/admin/About.php:63
+msgid "PHP:"
+msgstr ""
+
+#: /var/www/yourCMDB/web/admin/About.php:64
+msgid "PHP server api:"
+msgstr "PHP服务器API: "
+
+#: /var/www/yourCMDB/web/admin/About.php:67
+msgid "authentication methods"
+msgstr "认证方式"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:52
+msgid "Search..."
+msgstr "搜索"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:64
+msgid "Home"
+msgstr "主页"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:67
+msgid "Import-Export"
+msgstr "导入-导出"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:71
+msgid "Objects"
+msgstr "对象"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:104
+msgid "Settings"
+msgstr "设置"
+
+#: /var/www/yourCMDB/web/include/navigation.inc.php:111
+msgid "Logout"
+msgstr "登出"
+
+#: /var/www/yourCMDB/web/include/functions.inc.php:64
+#: /var/www/yourCMDB/web/include/functions.inc.php:76
+msgid "close"
+msgstr "关闭"
+
