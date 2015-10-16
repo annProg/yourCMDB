@@ -28,6 +28,7 @@
 	use yourCMDB\rest\RestResourceExporter;
 	use yourCMDB\rest\RestResourceObject;
 	use yourCMDB\rest\RestResourceObjectLog;
+	use yourCMDB\rest\RestResourceObjectFields;
 	use yourCMDB\rest\RestResourceObjectLinks;
 	use yourCMDB\rest\RestResourceObjectlist;
 	use yourCMDB\rest\RestResourceObjectTypes;
@@ -90,6 +91,10 @@
 
 		case "objectlogs":
 			$restResource = new RestResourceObjectLog($requestPath, $authUser);
+			break;
+
+		case "objectfields":
+			$restResource = new RestResourceObjectFields($requestPath, $authUser);
 			break;
 
 		case "objectlinks":
