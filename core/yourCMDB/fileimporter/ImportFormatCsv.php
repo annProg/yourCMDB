@@ -187,10 +187,24 @@ class ImportFormatCsv extends ImportFormat
 						$assetId = $line[$assetIdMapping];
 						try
 						{
+							$key = checkUniqFields($optionType, $objectFields, $assetId);
+							if($key)
+							{
+								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
+								print_r($paramMessage);
+								continue;
+							}
 							$objectController->updateObject($assetId, 'A', $objectFields, $this->authUser);
 						}
 						catch(Exception $e)
 						{
+							$key = checkUniqFields($optionType, $objectFields);
+							if($key)
+							{
+								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
+								print_r($paramMessage);
+								continue;
+							}
 							//if object was not found, add new one
 							$objectController->addObject($optionType, 'A', $objectFields, $this->authUser);
 						}
@@ -198,6 +212,13 @@ class ImportFormatCsv extends ImportFormat
 					//if not, create a new object
 					else
 					{
+							$key = checkUniqFields($optionType, $objectFields);
+							if($key)
+							{
+								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
+								print_r($paramMessage);
+								continue;
+							}
 						//generate object and save to datastore
 						$objectController->addObject($optionType, 'A', $objectFields, $this->authUser);
 					}

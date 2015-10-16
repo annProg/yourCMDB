@@ -45,7 +45,9 @@ class RestResourceObjectFields extends RestResource
 		try
 		{
 			$objectType = $this->uri[1];
-			$output = $config->getObjectTypeConfig()->getFields($objectType);
+			@$output = $config->getObjectTypeConfig()->getFields($objectType);
+			if(empty($output))
+				return new RestResponse(404);
 		}
 		catch(CmdbObjectNotFoundException $e)
 		{
