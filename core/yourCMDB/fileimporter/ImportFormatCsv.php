@@ -190,8 +190,7 @@ class ImportFormatCsv extends ImportFormat
 							$key = checkUniqFields($optionType, $objectFields, $assetId);
 							if($key)
 							{
-								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
-								print_r($paramMessage);
+								$paramMessage .= gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
 								continue;
 							}
 							$objectController->updateObject($assetId, 'A', $objectFields, $this->authUser);
@@ -202,7 +201,6 @@ class ImportFormatCsv extends ImportFormat
 							if($key)
 							{
 								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
-								print_r($paramMessage);
 								continue;
 							}
 							//if object was not found, add new one
@@ -216,7 +214,6 @@ class ImportFormatCsv extends ImportFormat
 							if($key)
 							{
 								$paramMessage = gettext(json_encode($key) . " conflict: " . $objectFields[$key[0]] . "<br>");
-								print_r($paramMessage);
 								continue;
 							}
 						//generate object and save to datastore
@@ -228,6 +225,7 @@ class ImportFormatCsv extends ImportFormat
 			//increment counter
 			$i++;
 		}
+		//die($paramMessage);
 
 		//check, if CSV file could be deleted
 		$deleteFile = false;
