@@ -90,6 +90,9 @@ function checkUniqFields($type, $fields, $objectId=0)
 	global $config, $objectController;
 	//check unique field
 	$uniq = $config->getObjectTypeConfig()->getUniqFields($type);
+	if(empty($uniq)) {
+		return false;
+	}
 	$notUniq = false;
 	$emptyFiled = false;
 	foreach($uniq as $key => $value)
