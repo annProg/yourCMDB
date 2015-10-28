@@ -81,6 +81,8 @@ class ObjectTypeConfig
 					$fieldDefaultValue = (string)$field['default'];
 					$fieldIsSummary = false;
 					$fieldIsUniq = false; //uniq field. should be uniq and not null
+					$fieldIsCal = false; //calculate field. calculate from other fields
+					$fieldIsUnionUniq = false; //unionuniq field. some fileds put together should be uniq
 					if(isset($field['summaryfield']) && $field['summaryfield'] == "true")
 					{
 						$fieldIsSummary = true;
@@ -89,12 +91,25 @@ class ObjectTypeConfig
 					{
 						$fieldIsUniq = true;
 					}
+
+					if(isset($field['calculate']) && $field['calculate'] == "true")
+					{
+						$fieldIsCal = true;
+					}
+
+					if(isset($field['unionuniq']) && $field['unionuniq'] == "true")
+					{
+						$fieldIsUnionUniq = true;
+					}
+
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['name'] = $fieldName;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['type'] = $fieldType;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['label'] = $fieldLabel;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['default'] = $fieldDefaultValue;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['summary'] = $fieldIsSummary;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['uniq'] = $fieldIsUniq;
+					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['calculate'] = $fieldIsCal;
+					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['unionuniq'] = $fieldIsUnionUniq;
 				}
 			}
 
@@ -225,6 +240,52 @@ class ObjectTypeConfig
 			foreach($group as $field)
 			{
 				if($field['uniq'])
+				{	
+					$fieldname = $field['name'];
+					$fieldtype = $field['type'];
+					$output[$fieldname] = $fieldtype;
+				}
+			}
+		}
+		return $output;
+	}
+
+	/**
+	* Returns an array with all calculate fields of a specific object type
+	* @param $objectType	object type for getting the calculate fields
+	* @returns 		array with fieldname->datatype
+	*/
+	public function getCalFields($objectType)
+	{
+		$output = Array();
+		foreach($this->objectFields[$objectType] as $group)
+		{
+			foreach($group as $field)
+			{
+				if($field['calculate'])
+				{	
+					$fieldname = $field['name'];
+					$fieldtype = $field['type'];
+					$output[$fieldname] = $fieldtype;
+				}
+			}
+		}
+		return $output;
+	}
+
+	/**
+	* Returns an array with all unionuniq fields of a specific object type
+	* @param $objectType	object type for getting the unionuniq fields
+	* @returns 		array with fieldname->datatype
+	*/
+	public function getUnionUniqFields($objectType)
+	{
+		$output = Array();
+		foreach($this->objectFields[$objectType] as $group)
+		{
+			foreach($group as $field)
+			{
+				if($field['unionuniq'])
 				{	
 					$fieldname = $field['name'];
 					$fieldtype = $field['type'];
