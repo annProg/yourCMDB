@@ -92,6 +92,11 @@ class ObjectTypeConfig
 						$fieldIsUniq = true;
 					}
 
+					if(isset($field['readonly']) && $field['readonly'] == "true")
+					{
+						$fieldIsReadonly = true;
+					}
+
 					if(isset($field['calculate']) && $field['calculate'] == "true")
 					{
 						$fieldIsCal = true;
@@ -110,6 +115,7 @@ class ObjectTypeConfig
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['uniq'] = $fieldIsUniq;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['calculate'] = $fieldIsCal;
 					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['unionuniq'] = $fieldIsUnionUniq;
+					$this->objectFields[$objectName][$fieldGroupName][$fieldName]['readonly'] = $fieldIsReadonly;
 				}
 			}
 
@@ -286,6 +292,29 @@ class ObjectTypeConfig
 			foreach($group as $field)
 			{
 				if($field['unionuniq'])
+				{	
+					$fieldname = $field['name'];
+					$fieldtype = $field['type'];
+					$output[$fieldname] = $fieldtype;
+				}
+			}
+		}
+		return $output;
+	}
+
+	/**
+	* Returns an array with all readonly fields of a specific object type
+	* @param $objectType	object type for getting the readonly fields
+	* @returns 		array with fieldname->datatype
+	*/
+	public function getReadonlyFields($objectType)
+	{
+		$output = Array();
+		foreach($this->objectFields[$objectType] as $group)
+		{
+			foreach($group as $field)
+			{
+				if($field['readonly'])
 				{	
 					$fieldname = $field['name'];
 					$fieldtype = $field['type'];
