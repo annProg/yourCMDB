@@ -243,7 +243,7 @@
 			$fieldType = $config->getObjectTypeConfig()->getFieldType($object->getType(), $field);
 			echo "<tr>";
 			echo "<td>$fieldLabel:</td>";
-			echo "<td>";
+			echo "<td style=\"word-break:break-all\">";
 			echo showFieldForDataType($object->getType(), $fieldName, $fieldValue, $fieldType, false);
 			echo "</td>";
 			echo "</tr>";
