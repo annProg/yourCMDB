@@ -114,6 +114,10 @@
 			{
                         	$objectFields[$field] = getHttpPostVar($field, "");
 			}
+
+			//readonly fields
+			$objectFields = checkReadonlyFields($paramType, $objectFields);
+
 			$key = checkUniqFields($paramType, $objectFields);
 			if($key)
 			{

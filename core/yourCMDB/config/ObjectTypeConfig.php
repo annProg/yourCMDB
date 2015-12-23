@@ -280,6 +280,29 @@ class ObjectTypeConfig
 	}
 
 	/**
+	* Returns an array with all readonly fields of a specific object type
+	* @param $objectType    object type for getting the readonly fields
+	* @returns              array with fieldname->datatype
+	*/
+	public function getReadonlyFields($objectType)
+	{
+		  $output = Array();
+		  foreach($this->objectFields[$objectType] as $group)
+		  {
+				  foreach($group as $field)
+				  {
+						  if($field['readonly'])
+						  {       
+								  $fieldname = $field['name'];
+								  $fieldtype = $field['type'];
+								  $output[$fieldname] = $fieldtype;
+						  }
+				  }
+		  }
+		  return $output;
+	}
+
+	/**
 	* Returns an array with all unionuniq fields of a specific object type
 	* @param $objectType	object type for getting the unionuniq fields
 	* @returns 		array with fieldname->datatype
@@ -292,29 +315,6 @@ class ObjectTypeConfig
 			foreach($group as $field)
 			{
 				if($field['unionuniq'])
-				{	
-					$fieldname = $field['name'];
-					$fieldtype = $field['type'];
-					$output[$fieldname] = $fieldtype;
-				}
-			}
-		}
-		return $output;
-	}
-
-	/**
-	* Returns an array with all readonly fields of a specific object type
-	* @param $objectType	object type for getting the readonly fields
-	* @returns 		array with fieldname->datatype
-	*/
-	public function getReadonlyFields($objectType)
-	{
-		$output = Array();
-		foreach($this->objectFields[$objectType] as $group)
-		{
-			foreach($group as $field)
-			{
-				if($field['readonly'])
 				{	
 					$fieldname = $field['name'];
 					$fieldtype = $field['type'];

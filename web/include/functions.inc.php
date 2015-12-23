@@ -164,6 +164,34 @@ function checkRestUniqFields($requestData)
 }
 
 /**
+ * check readonly field(readonly field can only modify by rest api)
+ * @param string $type  object type
+ * @param mixed[] $fields  array with  all fields of a specific object
+ * @param mixed[] $oldobject  object of old cmdb object
+ * @returns array of readonly fields
+ */
+function checkReadonlyFields($type, $fields, $oldobject=null)
+{
+       global $config, $objectController;
+       //check readonly field
+       $readonly = $config->getObjectTypeConfig()->getReadonlyFields($type);
+       if(empty($readonly)) {
+               return $fields;
+       } else {
+               foreach($readonly as $key => $value)
+               {
+                       if(!is_null($oldobject)) {
+                               $fields[$key] = $oldobject->getFieldvalue($key);
+                       } else {
+                               $fields[$key] = "readonly";
+                       }
+               }
+               return $fields;
+       }
+
+}
+
+/**
  * print error message
  * @param array $key  array of conflict key and objectId
  * @returns  json string  json string error message
