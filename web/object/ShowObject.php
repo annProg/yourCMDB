@@ -124,8 +124,8 @@
 		$fieldValue = $object->getFieldValue($summaryfield);
 		$fieldType = $config->getObjectTypeConfig()->getFieldType($object->getType(), $summaryfield);
 		echo "<tr>";
-		echo "<td>$fieldLabel</td>";
-		echo "<td style=\"word-break:break-all\">";
+		echo "<td style=\"width:20%\">$fieldLabel</td>";
+		echo "<td style=\"word-break:break-all; width:80%\">";
 		echo showFieldForDataType($object->getType(), $summaryfield, $fieldValue, $fieldType, false);
 		echo "</td>";
 		echo "</tr>";
@@ -242,8 +242,8 @@
 			$fieldLabel = $config->getObjectTypeConfig()->getFieldLabel($object->getType(), $field);
 			$fieldType = $config->getObjectTypeConfig()->getFieldType($object->getType(), $field);
 			echo "<tr>";
-			echo "<td>$fieldLabel:</td>";
-			echo "<td style=\"word-break:break-all\">";
+			echo "<td style=\"width:20%\">$fieldLabel:</td>";
+			echo "<td style=\"word-break:break-all; width:80%\">";
 			echo showFieldForDataType($object->getType(), $fieldName, $fieldValue, $fieldType, false);
 			echo "</td>";
 			echo "</tr>";
