@@ -172,6 +172,9 @@
 					include "object/ShowObject.php";
 					break;
 				}
+				//readonly fields
+				$objectFields = checkReadonlyFields($paramType, $objectFields, $object);
+
 				$object = $objectController->updateObject($paramId, $status, $objectFields, $authUser);
 			}
 			catch(CmdbObjectNotFoundException $e)

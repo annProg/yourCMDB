@@ -81,6 +81,7 @@ class ObjectTypeConfig
 					$fieldDefaultValue = (string)$field['default'];
 					$fieldIsSummary = false;
 					$fieldIsUniq = false; //uniq field. should be uniq and not null
+					$fieldIsReadonly = false; //readonly field. should be uniq and not null
 					$fieldIsCal = false; //calculate field. calculate from other fields
 					$fieldIsUnionUniq = false; //unionuniq field. some fileds put together should be uniq
 					if(isset($field['summaryfield']) && $field['summaryfield'] == "true")
