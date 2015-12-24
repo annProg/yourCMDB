@@ -183,7 +183,7 @@ function checkReadonlyFields($type, $fields, $oldobject=null)
                        if(!is_null($oldobject)) {
                                $fields[$key] = $oldobject->getFieldvalue($key);
                        } else {
-                               $fields[$key] = "readonly";
+                               $fields[$key] = "";
                        }
                }
                return $fields;
